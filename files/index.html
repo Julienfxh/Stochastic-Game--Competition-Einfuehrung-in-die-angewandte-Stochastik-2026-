@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. Stelands Stochastik-Abenteuer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0a0a16;
+      font-family: 'Press Start 2P', monospace;
+    }
+    #game-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #gameCanvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    #uiLayer {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: none;
+      z-index: 10;
+    }
+
+    /* Mini-game UI styles */
+    .mini-screen {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      background: #0f0e1a;
+      font-family: 'Press Start 2P', monospace;
+      color: #e0e0e0;
+    }
+    .mini-header {
+      padding: 10px 16px;
+      border-bottom: 3px solid #4a4a8e;
+      font-size: 10px;
+      color: #ffd700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(180deg, rgba(255,215,0,0.06), transparent);
+    }
+    .mini-header .coin-display {
+      margin-left: auto;
+      font-size: 8px;
+      color: #e0e0e0;
+    }
+    .label { font-size: 6px; color: #7a7a8e; }
+
+    .rbtn {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      padding: 8px 16px;
+      background: #222250;
+      color: #e0e0e0;
+      border: 2px solid #4a4a8e;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    .rbtn:hover { background: #4a4a8e; }
+    .rbtn:disabled { background: #2a2a2a; color: #555; border-color: #444; cursor: not-allowed; }
+    .action-btn { background: #1a4a1a; border-color: #2a7a2a; }
+    .action-btn:hover { background: #2a6a2a; }
+
+    .chip-btn {
+      padding: 4px 8px;
+      background: #141430;
+      border: 2px solid #4a4a8e;
+      cursor: pointer;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px;
+      color: #e0e0e0;
+    }
+    .chip-btn:hover, .chip-btn.active { background: #4a4a8e; }
+
+    .bet-opt {
+      padding: 7px 9px;
+      border: 2px solid #444;
+      cursor: pointer;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px;
+      color: #fff;
+      text-align: center;
+      min-width: 55px;
+    }
+    .bet-opt:hover { border-color: #888; }
+
+    .num-btn {
+      width: 20px; height: 20px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid #444;
+      cursor: pointer;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 5px;
+      color: #fff;
+    }
+    .num-btn:hover { border-color: #ffd700; }
+
+    .slot-reel {
+      width: 70px; height: 70px;
+      background: #08081a;
+      border: 3px solid #ffd700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    .horse-card {
+      padding: 6px;
+      background: #141430;
+      border: 2px solid #4a4a8e;
+      cursor: pointer;
+    }
+    .horse-card:hover { background: #1a1a40; }
+    .horse-card.selected { background: #1a2a1a; }
+
+    .level-item {
+      padding: 14px;
+      margin-bottom: 8px;
+      background: #141430;
+      border: 2px solid #4a4a8e;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .level-item:hover {
+      background: #222250;
+      transform: translateX(4px);
+    }
+    .level-num {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: #08081a;
+      border: 2px solid #4a4a8e;
+      font-size: 14px;
+      color: #ffd700;
+      flex-shrink: 0;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #08081a; }
+    ::-webkit-scrollbar-thumb { background: #4a4a8e; }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="680" height="480"></canvas>
+    <img id="dialog-portrait" src="prof.jpg" style="position:absolute;display:none;object-fit:cover;border:2px solid #4a4a8e;box-sizing:border-box;">
+    <div id="uiLayer"></div>
+  </div>
+
+  <script src="game.js"></script>
+  <script src="campus.js"></script>
+  <script src="casino.js"></script>
+  <script src="roulette.js"></script>
+  <script src="slots.js"></script>
+  <script src="horses.js"></script>
+  <script src="blackjack.js"></script>
+  <script src="shop.js"></script>
+  <script src="ponte.js"></script>
+  <script src="wr1.js"></script>
+  <script src="wr2.js"></script>
+  <script src="wr3.js"></script>
+  <script src="wr4.js"></script>
+  <script src="wr5.js"></script>
+</body>
+</html>
