@@ -1,63 +1,62 @@
-# Prof. Stelands Stochastik-Abenteuer
-
-Ein browserbasiertes Pixel-Art Lernspiel für die Vorlesung Einführung in die angewante Stochastik an der RWTH Aachen.
-
+# Prof. Steland's Stochastics Adventure
+ 
+A browser-based pixel-art learning game for the lecture *Introduction to Applied Stochastics* (Einführung in die angewandte Stochastik) at RWTH Aachen University.
+ 
+This project was built as part of a competition held in the lecture *Einführung in die Stochastik* at RWTH Aachen University, where it won **3rd place**.
+ 
 ---
-## 
+##
 ![DemoBild](DemoBild.jpg)
-## Hinweis
-
-Der in diesem Spiel dargestellte Professor Steland ist eine fiktive Figur. Die reale Person Professor Dr. Steland an der RWTH Aachen ist nicht verantwortlich für dessen Inhalte.
-
+## Disclaimer
+ 
+The Professor Steland depicted in this game is a fictional character. The real Professor Dr. Steland at RWTH Aachen University is not responsible for its content.
+ 
 ---
-
-## Was ist das?
-
-Ein kleines Lernspiel, in dem du als Pixel-Charakter den RWTH-Campus erkundest. In den verschiedenen Gebäuden kannst du Quiz-Fragen zu den Stochastik-Vorlesungen beantworten, Coins verdienen und diese im Casino verzocken oder für neue Skins ausgeben.
-
+ 
+## What is this?
+ 
+A small learning game in which you explore the RWTH campus as a pixel-art character. In the various buildings you can answer quiz questions on the stochastics lectures, earn coins, and either gamble them away in the casino or spend them on new skins.
+ 
 ## Bushof Update
-Votet mich hoch für das ULTIMATIVE BUSHOF Update!!!
-
-## Starten
-
-### Einfachste Methode: Doppelklick
-
-Einfach die `index.html` im `files`-Ordner doppelklicken — das Spiel öffnet sich direkt im Browser. Funktioniert in Firefox und Safari problemlos.
-
-> **Chrome:** Falls die Hintergrundmusik in der Ponte nicht abgespielt wird, liegt das an Chromes lokalen Dateirichtlinien. Entweder Firefox nutzen oder den lokalen Server unten verwenden.
-
-### Alternativ: Lokaler Webserver (Python)
-
-Terminal öffnen, in den `files`-Ordner navigieren und ausführen:
-
+Vote for me for the ULTIMATE BUSHOF update!!!
+ 
+## Getting Started
+ 
+### Easiest method: double-click
+ 
+Simply double-click `index.html` in the `files` folder. The game opens directly in your browser. Works fine in Firefox and Safari.
+ 
+> **Chrome:** If the background music in the Ponte doesn't play, this is due to Chrome's local file policies. Either use Firefox or use the local server below.
+ 
+### Alternative: local web server (Python)
+ 
+Open a terminal, navigate to the `files` folder and run:
+ 
 ```
 python3 -m http.server 8080
 ```
-
-Dann im Browser `http://localhost:8080` aufrufen.
-
-### Oder: VS Code Live Server
-
-Erweiterung **Live Server** installieren, dann `index.html` mit Rechtsklick → *Open with Live Server* öffnen.
-
+ 
+Then open `http://localhost:8080` in your browser.
+ 
+### Or: VS Code Live Server
+ 
+Install the **Live Server** extension, then right-click `index.html` → *Open with Live Server*.
+ 
 ---
-
-## Steuerung
-
-| Taste | Aktion |
+ 
+## Controls
+ 
+| Key | Action |
 |---|---|
-| Pfeiltasten / WASD | Laufen |
-| Enter / Leertaste | Gebäude betreten / Quiz bestätigen |
-| Escape | Zurück / Schließen |
-
+| Arrow keys / WASD | Move |
+| Enter / Space | Enter building / confirm quiz answer |
+| Escape | Go back / close |
+ 
 ---
-
-## Technik
-
-- Reines Vanilla JavaScript, kein Framework
-- Canvas-basiertes Pixel-Art Rendering
-- Alle Quizfragen basieren auf den offiziellen Vorlesungsfolien 
-- Blackjack mit 6-Deck-Schuh und Basic Strategy Advisor
-
-
-
+ 
+## Tech
+ 
+- Pure vanilla JavaScript, no framework
+- Canvas-based pixel-art rendering
+- All quiz questions are based on the official lecture slides
+- Blackjack with a 6-deck shoe and a basic strategy advisor
